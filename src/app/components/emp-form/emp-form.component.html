@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row emp-form" [ngClass]="{'mt-4':!data}">
+        <div class="col-12">
+            <div class="alert" [ngClass]="submitClass" *ngIf="submitMsg">
+                <strong>
+                    {{submitMsg}} 
+                </strong>
+            </div>
+            <div class="d-flex">
+                <h2 class="mr-auto">Employee Details</h2>
+                <a routerLink='/mainDashboard' class="ml-auto" *ngIf="!data">Go to Dashboard</a>
+                <button class="button-close ml-auto" *ngIf="data" mat-button [mat-dialog-close]="true">X</button>
+            </div>
+            <form [formGroup]="empForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="fname">First Name</label>
+                    <input type="text" formControlName="fname" class="form-control" id="fname"
+                        placeholder="Enter First Name" name="fname">
+                </div>
+                <div class="form-group">
+                    <label for="lname">Last Name</label>
+                    <input type="text" formControlName="lname" class="form-control" id="lname"
+                        placeholder="Enter Last Name" name="lname">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" formControlName="email" class="form-control" id="email"
+                        placeholder="Enter email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="mobile">mobile Number</label>
+                    <input type="text" formControlName="mobile" class="form-control" id="mobile"
+                        placeholder="Enter mobile Number" name="mobile">
+                </div>
+                <div class="form-group">
+                    <label for="salary">Salary</label>
+                    <input type="text" formControlName="salary" class="form-control" id="salary"
+                        placeholder="Enter Salary" name="salary">
+                </div>
+                <span class="d-flex pt-4 justify-content-end">
+                    <button type="button" *ngIf="data" class="btn btn-secondary mr-2" mat-button [mat-dialog-close]="true">Close</button>
+                    <button type="button" *ngIf="!data" class="btn btn-secondary mr-2" (click)="resetEmpForm()">Reset</button>
+                    <button type="submit" class="btn btn-primary">{{submitName}}</button>
+                </span>
+            </form>
+        </div>
+    </div>
+</div>

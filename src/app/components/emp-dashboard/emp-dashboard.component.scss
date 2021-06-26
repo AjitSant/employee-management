@@ -1,0 +1,19 @@
+.emp-dashboard {
+  table {
+    width: 100%;
+  }
+
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  td,
+  th {
+    width: 14.28%;
+    padding: {
+      top: 8px;
+      bottom: 8px;
+    }
+  }
+}

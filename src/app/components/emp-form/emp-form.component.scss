@@ -1,0 +1,15 @@
+.emp-form {
+  button.button-close {
+    position: inherit;
+    top: 0;
+    right: 0;
+    border: none;
+    background: none;
+    font-size: 26px;
+    color: darkgrey;
+    &:focus {
+      outline: none;
+      cursor: pointer;
+    }
+  }
+}

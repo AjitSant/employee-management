@@ -1,0 +1,26 @@
+.main-dashboard {
+  margin-top: 53px;
+  h4 {
+    font-size: 17px;
+  }
+  .has-search {
+    input {
+      border: none;
+      padding: 6px 0;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .add-record {
+    margin-top: 35px;
+    .badge-dark {
+      color: #fff;
+      background-color: #343a40;
+      padding: 7px 11px;
+      border-radius: 50%;
+      position: absolute;
+      top: -11px;
+    }
+  }
+}

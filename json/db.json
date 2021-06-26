@@ -1,0 +1,118 @@
+{
+  "employee": [
+    {
+      "fname": "SriDevi",
+      "lname": "Kale",
+      "email": "sri.test@gmail.com",
+      "mobile": "8765980889",
+      "salary": "100000",
+      "id": 5
+    },
+    {
+      "fname": "ajay",
+      "lname": "devgan",
+      "email": "dev.test@gmail.com",
+      "mobile": "8765980845",
+      "salary": "100000",
+      "id": 6
+    },
+    {
+      "fname": "Anchal",
+      "lname": "garg",
+      "email": "anchal.garg@test.com",
+      "mobile": "8900034178",
+      "salary": "891209",
+      "id": 9
+    },
+    {
+      "fname": "amit",
+      "lname": "verma",
+      "email": "amit.verma@gmail.com",
+      "mobile": "9812564310",
+      "salary": "78000",
+      "id": 10
+    },
+    {
+      "fname": "test1",
+      "lname": "last",
+      "email": "test1@test.com",
+      "mobile": "9812345671",
+      "salary": "90999",
+      "id": 11
+    },
+    {
+      "fname": "Abhay",
+      "lname": "sant",
+      "email": "abhay@test.com",
+      "mobile": "9056417865",
+      "salary": "89000",
+      "id": 12
+    }
+  ],
+  "dashboard": [
+    {
+      "fname": "ajay",
+      "lname": "Bhagat",
+      "email": "ajay.test@gmail.com",
+      "mobile": "8765980845",
+      "salary": "100000",
+      "id": 6
+    },
+    {
+      "fname": "pallavi",
+      "lname": "maurya",
+      "email": "pal.maurya.test@gmail.com",
+      "mobile": "5765980845",
+      "salary": "100000",
+      "id": 8
+    },
+    {
+      "fname": "Anchal",
+      "lname": "garg",
+      "email": "anchal.garg@test.com",
+      "mobile": "8900034178",
+      "salary": "891209",
+      "id": 9
+    },
+    {
+      "fname": "Sri",
+      "lname": "pallavi",
+      "email": "sri.pallavi@test.com",
+      "mobile": "9812345675",
+      "salary": "89710",
+      "id": 11
+    },
+    {
+      "fname": "Random",
+      "lname": "test",
+      "email": "random.pallavi@test.com",
+      "mobile": "9812345675",
+      "salary": "89710",
+      "id": 12
+    },
+    {
+      "fname": "kiran",
+      "lname": "shah",
+      "email": "kiran.shah@test.com",
+      "mobile": "8971245190",
+      "salary": "98000",
+      "id": 13
+    },
+    {
+      "fname": "Rani",
+      "lname": "Sharma",
+      "email": "rani.sharmaji@test.com",
+      "mobile": "9087125620",
+      "salary": "80000",
+      "id": 14
+    },
+    {
+      "fname": "Ajit",
+      "lname": "Sant",
+      "email": "ajit.sant@test.com",
+      "mobile": "9812876510",
+      "salary": "50000",
+      "id": 15
+    }
+  ]
+}

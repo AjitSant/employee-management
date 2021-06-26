@@ -1,0 +1,30 @@
+<div class="container-fluid login-section">
+    <div class="row login-section-inner align-items-center justify-content-center">
+        <div class="col-lg-4 col-md-6 login-box">
+            <div class="login-title mt-3">
+                Login
+            </div>
+            <div class="login-form mt-2">
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit($event)">
+                    <div class="form-group">
+                        <label class="form-control-label" for='email'>Email</label>
+                        <input type="email" formControlName="email" id='email' class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" for='pass'>password</label>
+                        <input type="password" formControlName="password" id='pass' class="form-control">
+                    </div>
+
+                    <div class="loginbttm">
+                        <div class="login-text">
+                            <!-- Error Message -->
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center login-button">
+                            <button type="submit" class="btn btn-success">Login</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
