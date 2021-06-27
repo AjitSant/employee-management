@@ -1,9 +1,18 @@
 .custom-card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 1rem;
-    background: blue;
+    background-image: linear-gradient(to top left, rgba(0,0,255,0.6), rgba(0,0,255,0.8));
     color: #fff;
+    border: none;
+    h4{
+        font-size: 17px;
+    }
+    p{
+        font-size: 13px;
+    }
     button{
         background: black;
+        font-size: 13px;
+        border: none;
     }
   }

@@ -47,17 +47,17 @@
       "mobile": "9056417865",
       "salary": "89000",
       "id": 12
+    },
+    {
+      "fname": "Aryan",
+      "lname": "Dutt",
+      "email": "ajitkumarsant.test@gmail.com",
+      "mobile": "9812549871",
+      "salary": "50000",
+      "id": 13
     }
   ],
   "dashboard": [
-    {
-      "fname": "ajay",
-      "lname": "Bhagat",
-      "email": "ajay.test@gmail.com",
-      "mobile": "8765980845",
-      "salary": "100000",
-      "id": 6
-    },
     {
       "fname": "pallavi",
       "lname": "maurya",
@@ -83,14 +83,6 @@
       "id": 11
     },
     {
-      "fname": "Random",
-      "lname": "test",
-      "email": "random.pallavi@test.com",
-      "mobile": "9812345675",
-      "salary": "89710",
-      "id": 12
-    },
-    {
       "fname": "kiran",
       "lname": "shah",
       "email": "kiran.shah@test.com",
@@ -109,10 +101,34 @@
     {
       "fname": "Ajit",
       "lname": "Sant",
-      "email": "ajit.sant@test.com",
-      "mobile": "9812876510",
-      "salary": "50000",
-      "id": 15
+      "email": "test@spam.com",
+      "mobile": "8976124563",
+      "salary": "60000",
+      "id": 16
+    },
+    {
+      "fname": "keya",
+      "lname": "dutta",
+      "email": "keya@gmail.com",
+      "mobile": "8971290862",
+      "salary": "80000",
+      "id": 17
+    },
+    {
+      "fname": "Ajinka",
+      "lname": "Parbhane",
+      "email": "ajinkya@test.com",
+      "mobile": "8712987209",
+      "salary": "89000",
+      "id": 18
+    },
+    {
+      "fname": "Sri",
+      "lname": "Shankara",
+      "email": "sri.shankar@test.com",
+      "mobile": "9898123401",
+      "salary": "90000",
+      "id": 19
     }
   ]
 }

@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "email": "ajitkumarsantx@gmail.com",
+      "password": "$2a$10$B2wQ44YyFswYIihD68hBD.07JPtXuG5fC5Pn.6t0QT.KTTN5FyEWu",
+      "id": 1
+    },
+    {
+      "email": "karan.arjun@test.com",
+      "password": "$2a$10$X4YpmGBpP2DER91IoU5gh.zz44JLpCiOXosS14N9Q8M1Rck5uqlDu",
+      "id": 2
+    },
+    {
+      "email": "rahul@test.com",
+      "password": "$2a$10$WeCMNx/0wGIyumLIYG411.5j4DIt0g9LyXpBAgdLFko5UnswzbpV.",
+      "id": 3
+    }
+  ]
+}

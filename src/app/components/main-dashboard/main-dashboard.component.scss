@@ -12,15 +12,26 @@
       }
     }
   }
+  .record-section {
+    max-height: 420px;
+    overflow-y: scroll;
+  }
   .add-record {
     margin-top: 35px;
-    .badge-dark {
+    button {
+      border: none;
+      background-image: linear-gradient(
+        to top,
+        rgba(0, 0, 255, 0.5),
+        rgba(0, 0, 255, 0.8)
+      );
       color: #fff;
-      background-color: #343a40;
-      padding: 7px 11px;
-      border-radius: 50%;
-      position: absolute;
-      top: -11px;
+      font-weight: 500;
+      font-size: 13px;
+      .mat-badge-content {
+        color: #fff;
+        background: black;
+      }
     }
   }
 }

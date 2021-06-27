@@ -6,6 +6,11 @@ export const environment = {
   production: false
 };
 
+export const empUrl = 'http://localhost:3004/employee/';
+export const dashboardUrl = 'http://localhost:3004/dashboard/';
+export const loginUrl = 'http://localhost:3000/login';
+export const verifyTokenUrl = 'http://localhost:3000/users'
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

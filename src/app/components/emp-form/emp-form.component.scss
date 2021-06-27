@@ -12,4 +12,15 @@
       cursor: pointer;
     }
   }
+        label{
+          &.invalid{
+            color: red;
+          }
+        }
+  input{
+    &.ng-invalid.ng-touched{
+            border-color:red;
+            border-width: 2px;
+          }
+  }
 }

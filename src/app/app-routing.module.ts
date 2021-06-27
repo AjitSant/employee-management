@@ -7,15 +7,16 @@ import { EmpFormComponent } from './components/emp-form/emp-form.component';
 import { LoginComponent } from './components/login/login.component';
 import { MainDashboardComponent } from './components/main-dashboard/main-dashboard.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { AuthenticateUserGuard } from './guards/authenticate-user.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'mainDashboard', component: MainDashboardComponent },
-  { path: 'empDashboard', component: EmpDashboardComponent },
-  { path: 'empForm', component: EmpFormComponent },
+  { path: 'mainDashboard', component: MainDashboardComponent, canActivate: [AuthenticateUserGuard] },
+  { path: 'empDashboard', component: EmpDashboardComponent, canActivate: [AuthenticateUserGuard] },
+  { path: 'empForm', component: EmpFormComponent, canActivate: [AuthenticateUserGuard] },
   { path: 'login', component: LoginComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent, canActivate: [AuthenticateUserGuard] },
+  { path: 'about', component: AboutComponent, canActivate: [AuthenticateUserGuard] },
   { path: '**', component: NotFoundComponent },
 ];
 

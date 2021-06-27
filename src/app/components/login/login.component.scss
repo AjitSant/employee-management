@@ -29,12 +29,6 @@
              padding: 4px 30px;
          }
         }
-
-        .login-text {
-          text-align: left;
-          padding-left: 0px;
-          color: #a2a4a4;
-        }
       }
       .form-group {
         outline: 0px;
@@ -67,9 +61,15 @@
           font-size: 15px;
           font-weight: 500;
         }
-        input:focus {
+        input {
+          &:focus{
           outline: none;
           box-shadow: 0 0 0;
+          }
+          &.ng-invalid.ng-touched{
+            border-color:red;
+            border-width: 2px;
+          }
         }
 
         .form-control-label {
@@ -77,6 +77,14 @@
           color: #6c6c6c;
           font-weight: 500;
           margin-bottom: 0;
+          &.invalid{
+            color: red;
+          }
+        }
+        .alert{
+          &.alert-danger{
+            top: -16px;
+          }
         }
       }
     }

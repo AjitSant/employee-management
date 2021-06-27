@@ -27,9 +27,9 @@ export class EmpFormComponent implements OnInit, OnDestroy {
     this.empForm = this.fb.group({
       fname: ['', Validators.required],
       lname: ['', Validators.required],
-      email: ['', Validators.required],
-      mobile: ['', Validators.required],
-      salary: ['', Validators.required]
+      email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
+      mobile: ['', [Validators.required, Validators.pattern("^[0-9]{10}$")]],
+      salary: ['', [Validators.required, Validators.pattern("^[0-9]{5,}$")]]
     });
   }
   ngOnInit(): void {
@@ -67,46 +67,49 @@ export class EmpFormComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
-    if (this.dashCall) {
-      if (this.submitName === "Add") {
-        this.apiSrv.postDashData(this.empForm.value).pipe(takeUntil(this.sub)).subscribe({
-          next: res => {
-            this.handleSuccess('Added');
-          },
-          error: error => {
-            this.handleErr('Added');
-          }
-        })
-      } else if (this.submitName === "Update") {
-        this.apiSrv.updateDashData(this.empForm.value, this.editData.id).pipe(takeUntil(this.sub)).subscribe({
-          next: res => {
-            this.handleSuccess('Added');
-          },
-          error: error => {
-            this.handleErr('Added');
-          }
-        })
+    this.empForm.markAllAsTouched();
+    if (this.empForm.valid) {
+      if (this.dashCall) {
+        if (this.submitName === "Add") {
+          this.apiSrv.postDashData(this.empForm.value).pipe(takeUntil(this.sub)).subscribe({
+            next: res => {
+              this.handleSuccess('Added');
+            },
+            error: error => {
+              this.handleErr('Added');
+            }
+          })
+        } else if (this.submitName === "Update") {
+          this.apiSrv.updateDashData(this.empForm.value, this.editData.id).pipe(takeUntil(this.sub)).subscribe({
+            next: res => {
+              this.handleSuccess('Added');
+            },
+            error: error => {
+              this.handleErr('Added');
+            }
+          })
+        }
       }
-    }
-    else {
-      if (this.submitName === "Add") {
-        this.apiSrv.postData(this.empForm.value).pipe(takeUntil(this.sub)).subscribe({
-          next: res => {
-            this.handleSuccess('Added');
-          },
-          error: error => {
-            this.handleErr('Added');
-          }
-        })
-      } else if (this.submitName === "Update") {
-        this.apiSrv.updateData(this.empForm.value, this.editData.id).pipe(takeUntil(this.sub)).subscribe({
-          next: res => {
-            this.handleSuccess('Added');
-          },
-          error: error => {
-            this.handleErr('Added');
-          }
-        })
+      else {
+        if (this.submitName === "Add") {
+          this.apiSrv.postData(this.empForm.value).pipe(takeUntil(this.sub)).subscribe({
+            next: res => {
+              this.handleSuccess('Added');
+            },
+            error: error => {
+              this.handleErr('Added');
+            }
+          })
+        } else if (this.submitName === "Update") {
+          this.apiSrv.updateData(this.empForm.value, this.editData.id).pipe(takeUntil(this.sub)).subscribe({
+            next: res => {
+              this.handleSuccess('Added');
+            },
+            error: error => {
+              this.handleErr('Added');
+            }
+          })
+        }
       }
     }
   }
