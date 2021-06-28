@@ -1,4 +1,7 @@
 .emp-form {
+  &.not-dialog {
+    margin-top: 68px;
+  }
   button.button-close {
     position: inherit;
     top: 0;
@@ -12,15 +15,15 @@
       cursor: pointer;
     }
   }
-        label{
-          &.invalid{
-            color: red;
-          }
-        }
-  input{
-    &.ng-invalid.ng-touched{
-            border-color:red;
-            border-width: 2px;
-          }
+  label {
+    &.invalid {
+      color: red;
+    }
+  }
+  input {
+    &.ng-invalid.ng-touched {
+      border-color: red;
+      border-width: 2px;
+    }
   }
 }

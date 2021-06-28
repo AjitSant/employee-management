@@ -1,60 +1,74 @@
 <div class="container">
-    <div class="row emp-form" [ngClass]="{'mt-4':!data}">
+    <div class="row emp-form" [ngClass]="{'not-dialog':!data}">
         <div class="col-12">
             <div class="alert" [ngClass]="submitClass" *ngIf="submitMsg">
                 <strong>
-                    {{submitMsg}} 
+                    {{submitMsg}}
                 </strong>
             </div>
             <div class="d-flex">
                 <h2 class="mr-auto">Employee Details</h2>
-                <a routerLink='/mainDashboard' class="ml-auto" *ngIf="!data">Go to Dashboard</a>
                 <button class="button-close ml-auto" *ngIf="data" mat-button [mat-dialog-close]="true">X</button>
             </div>
             <form [formGroup]="empForm" (ngSubmit)="onSubmit()">
                 <div class="form-group">
-                    <label for="fname" [ngClass]="{'invalid': empForm.controls['fname'].touched && empForm.controls['fname'].invalid}">First Name</label>
+                    <label for="fname"
+                        [ngClass]="{'invalid': empForm.controls['fname'].touched && empForm.controls['fname'].invalid}">First
+                        Name</label>
                     <input type="text" formControlName="fname" class="form-control" id="fname"
                         placeholder="Enter First Name" name="fname">
-                        <div class="alert alert-danger py-2" *ngIf="empForm.controls['fname'].touched && empForm.controls['fname'].invalid">
-                            Please enter a valid <strong>First Name</strong>
-                        </div>
+                    <div class="alert alert-danger py-2"
+                        *ngIf="empForm.controls['fname'].touched && empForm.controls['fname'].invalid">
+                        Please enter a valid <strong>First Name</strong>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="lname" [ngClass]="{'invalid': empForm.controls['lname'].touched && empForm.controls['lname'].invalid}">Last Name</label>
+                    <label for="lname"
+                        [ngClass]="{'invalid': empForm.controls['lname'].touched && empForm.controls['lname'].invalid}">Last
+                        Name</label>
                     <input type="text" formControlName="lname" class="form-control" id="lname"
                         placeholder="Enter Last Name" name="lname">
-                        <div class="alert alert-danger py-2" *ngIf="empForm.controls['lname'].touched && empForm.controls['lname'].invalid">
-                            Please enter a valid <strong>Last Name</strong>
-                        </div>
+                    <div class="alert alert-danger py-2"
+                        *ngIf="empForm.controls['lname'].touched && empForm.controls['lname'].invalid">
+                        Please enter a valid <strong>Last Name</strong>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="email" [ngClass]="{'invalid': empForm.controls['email'].touched && empForm.controls['email'].invalid}">Email:</label>
+                    <label for="email"
+                        [ngClass]="{'invalid': empForm.controls['email'].touched && empForm.controls['email'].invalid}">Email:</label>
                     <input type="email" formControlName="email" class="form-control" id="email"
                         placeholder="Enter email" name="email">
-                        <div class="alert alert-danger py-2" *ngIf="empForm.controls['email'].touched && empForm.controls['email'].invalid">
-                            Please enter a valid <strong>Email</strong>
-                        </div>
+                    <div class="alert alert-danger py-2"
+                        *ngIf="empForm.controls['email'].touched && empForm.controls['email'].invalid">
+                        Please enter a valid <strong>Email</strong>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="mobile" [ngClass]="{'invalid': empForm.controls['mobile'].touched && empForm.controls['mobile'].invalid}">mobile Number</label>
+                    <label for="mobile"
+                        [ngClass]="{'invalid': empForm.controls['mobile'].touched && empForm.controls['mobile'].invalid}">mobile
+                        Number</label>
                     <input type="text" formControlName="mobile" class="form-control" id="mobile"
                         placeholder="Enter mobile Number" name="mobile">
-                        <div class="alert alert-danger py-2" *ngIf="empForm.controls['mobile'].touched && empForm.controls['mobile'].invalid">
-                            Please enter a valid <strong>Mobile Number</strong>
-                        </div>
+                    <div class="alert alert-danger py-2"
+                        *ngIf="empForm.controls['mobile'].touched && empForm.controls['mobile'].invalid">
+                        Please enter a valid <strong>Mobile Number</strong>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="salary" [ngClass]="{'invalid': empForm.controls['salary'].touched && empForm.controls['salary'].invalid}">Salary</label>
+                    <label for="salary"
+                        [ngClass]="{'invalid': empForm.controls['salary'].touched && empForm.controls['salary'].invalid}">Salary</label>
                     <input type="text" formControlName="salary" class="form-control" id="salary"
                         placeholder="Enter Salary" name="salary">
-                        <div class="alert alert-danger py-2" *ngIf="empForm.controls['salary'].touched && empForm.controls['salary'].invalid">
-                            Please enter a valid <strong>Salary</strong>
-                        </div>
+                    <div class="alert alert-danger py-2"
+                        *ngIf="empForm.controls['salary'].touched && empForm.controls['salary'].invalid">
+                        Please enter a valid <strong>Salary</strong>
+                    </div>
                 </div>
                 <span class="d-flex pt-4 justify-content-end">
-                    <button type="button" *ngIf="data" class="btn btn-secondary mr-2" mat-button [mat-dialog-close]="true">Close</button>
-                    <button type="button" *ngIf="!data" class="btn btn-secondary mr-2" (click)="resetEmpForm()">Reset</button>
+                    <button type="button" *ngIf="data" class="btn btn-secondary mr-2" mat-button
+                        [mat-dialog-close]="true">Close</button>
+                    <button type="button" *ngIf="!data" class="btn btn-secondary mr-2"
+                        (click)="resetEmpForm()">Reset</button>
                     <button type="submit" class="btn btn-primary">{{submitName}}</button>
                 </span>
             </form>

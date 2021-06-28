@@ -1,6 +1,6 @@
 import { ApiService } from 'src/app/services/api.service';
 import { EmpInterface } from 'src/app/interfaces/app.model';
-import {  Component, OnDestroy, ViewChild } from '@angular/core';
+import { Component, OnDestroy, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -23,8 +23,8 @@ export class EmpDashboardComponent implements OnDestroy {
   paginator!: MatPaginator;
   @ViewChild(MatSort)
   sort: MatSort = new MatSort;
-  delMsg ='';
-  delClass ='';
+  delMsg = '';
+  delClass = '';
   constructor(private apiSrv: ApiService, private dialog: MatDialog) {
     this.getEmpData();
   }
@@ -64,6 +64,7 @@ export class EmpDashboardComponent implements OnDestroy {
 
   openDialog(empData?: EmpInterface) {
     let dialogRef = empData ? this.dialog.open(SimpleModalComponent, { data: { empData }, height: '80%', width: '40%' }) : this.dialog.open(SimpleModalComponent, { data: {}, height: '80%', width: '40%' });
+    dialogRef.componentInstance.component = EmpFormComponent;
     dialogRef.componentInstance.apiSuccessEvent.pipe(takeUntil(this.sub)).subscribe((res) => {
       if (res) {
         this.getEmpData();

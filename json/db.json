@@ -4,7 +4,7 @@
       "fname": "SriDevi",
       "lname": "Kale",
       "email": "sri.test@gmail.com",
-      "mobile": "8765980889",
+      "mobile": "8765980890",
       "salary": "100000",
       "id": 5
     },
@@ -55,30 +55,38 @@
       "mobile": "9812549871",
       "salary": "50000",
       "id": 13
+    },
+    {
+      "fname": "Aman",
+      "lname": "Singh",
+      "email": "aman@gmail.com",
+      "mobile": "9812098712",
+      "salary": "89000",
+      "id": 14
+    },
+    {
+      "fname": "Karna",
+      "lname": "Kumar",
+      "email": "karna@gmail.com",
+      "mobile": "9812091256",
+      "salary": "90000",
+      "id": 15
     }
   ],
   "dashboard": [
     {
       "fname": "pallavi",
-      "lname": "maurya",
-      "email": "pal.maurya.test@gmail.com",
+      "lname": "singh",
+      "email": "pallavi@twist.com",
       "mobile": "5765980845",
-      "salary": "100000",
+      "salary": "780000",
       "id": 8
-    },
-    {
-      "fname": "Anchal",
-      "lname": "garg",
-      "email": "anchal.garg@test.com",
-      "mobile": "8900034178",
-      "salary": "891209",
-      "id": 9
     },
     {
       "fname": "Sri",
       "lname": "pallavi",
       "email": "sri.pallavi@test.com",
-      "mobile": "9812345675",
+      "mobile": "9812345670",
       "salary": "89710",
       "id": 11
     },
@@ -129,6 +137,38 @@
       "mobile": "9898123401",
       "salary": "90000",
       "id": 19
+    },
+    {
+      "fname": "Riya",
+      "lname": "Sharma",
+      "email": "riya.sharma@test.com",
+      "mobile": "9812345610",
+      "salary": "80000",
+      "id": 20
+    },
+    {
+      "fname": "Arya",
+      "lname": "sharma",
+      "email": "arya@gmail.com",
+      "mobile": "7861298769",
+      "salary": "80000",
+      "id": 21
+    },
+    {
+      "fname": "Raj",
+      "lname": "Verma",
+      "email": "raj.verma@test.com",
+      "mobile": "9876123491",
+      "salary": "890000",
+      "id": 22
+    },
+    {
+      "fname": "kabir",
+      "lname": "kumar",
+      "email": "kabir@test.com",
+      "mobile": "9812098245",
+      "salary": "90800",
+      "id": 23
     }
   ]
 }

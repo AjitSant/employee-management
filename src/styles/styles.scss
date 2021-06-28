@@ -1,0 +1,17 @@
+// @font-face {
+//     font-family: Carnas;
+//     src: url(../assets/fonts/Carnas/Carnas-Regular.ttf) format("truetype");
+// }
+@import "~@angular/material/prebuilt-themes/indigo-pink.css"; 
+
+html, body { height: 100%; }
+@import 'variable';
+@import 'font';
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Carnas', 'arial', sans-serif;
+    font-style: Bold;
+  }
+.txt-bold{font-weight: bold;}
+ 

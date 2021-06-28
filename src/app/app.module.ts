@@ -57,7 +57,7 @@ import { FilterPipe } from './pipes/filter.pipe'
     MatDialogModule
   ],
   providers: [],
-  entryComponents:[SimpleModalComponent],
+  entryComponents:[SimpleModalComponent,EmpFormComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

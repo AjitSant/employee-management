@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject, Output, EventEmitter, OnDestroy, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { DialogData, EmpInterface } from 'src/app/interfaces/app.model';
@@ -23,7 +24,7 @@ export class EmpFormComponent implements OnInit, OnDestroy {
   @Output() apiSuccess = new EventEmitter<any>();
   dashCall = false;
 
-  constructor(private fb: FormBuilder, private apiSrv: ApiService) {
+  constructor(private fb: FormBuilder, private apiSrv: ApiService, private router:Router) {
     this.empForm = this.fb.group({
       fname: ['', Validators.required],
       lname: ['', Validators.required],
@@ -74,6 +75,7 @@ export class EmpFormComponent implements OnInit, OnDestroy {
           this.apiSrv.postDashData(this.empForm.value).pipe(takeUntil(this.sub)).subscribe({
             next: res => {
               this.handleSuccess('Added');
+              this.router.navigate(["/mainDashboard"]);
             },
             error: error => {
               this.handleErr('Added');
@@ -83,6 +85,7 @@ export class EmpFormComponent implements OnInit, OnDestroy {
           this.apiSrv.updateDashData(this.empForm.value, this.editData.id).pipe(takeUntil(this.sub)).subscribe({
             next: res => {
               this.handleSuccess('Added');
+              this.router.navigate(["/mainDashboard"]);
             },
             error: error => {
               this.handleErr('Added');
