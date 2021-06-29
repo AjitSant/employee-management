@@ -39,7 +39,6 @@ export class EmpDashboardComponent implements OnDestroy {
         return value;
       });
       this.dataSource = new MatTableDataSource(response as EmpInterface[]);
-      console.log(response);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });

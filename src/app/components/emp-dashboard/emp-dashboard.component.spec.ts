@@ -1,11 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { NO_ERRORS_SCHEMA, EventEmitter } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { EmpInterface } from 'src/app/interfaces/app.model';
 import { MatDialog } from '@angular/material/dialog';
 import { RouterTestingModule } from '@angular/router/testing';
 import { EmpDashboardComponent } from './emp-dashboard.component';
 import { SimpleModalComponent } from '../modal/simple-modal/simple-modal.component';
+import { of } from 'rxjs';
 
 describe('EmpDashboardComponent', () => {
   let component: EmpDashboardComponent;
@@ -13,8 +14,16 @@ describe('EmpDashboardComponent', () => {
 
   beforeEach(() => {
     const apiServiceStub = () => ({
-      getEmpData: () => ({ pipe: () => ({ subscribe: (f: (arg0: {}) => any) => f({}) }) }),
-      deleteData: (empId: any) => ({ pipe: () => ({ subscribe: (f: (arg0: {}) => any) => f({}) }) })
+      getEmpData: () => ({
+        pipe: () => ({
+          subscribe: (() => { })
+        })
+      }),
+      deleteData: () => ({
+        pipe: () => ({
+          subscribe: (() => { })
+        })
+      })
     });
     const matDialogStub = () => ({
       open: (simpleModalComponent: any, object: any) => ({})
@@ -52,8 +61,9 @@ describe('EmpDashboardComponent', () => {
   describe('openDialog', () => {
     it('makes expected calls', () => {
       const empInterfaceStub: EmpInterface = <any>{};
-      (<jasmine.Spy>component.getEmpData).calls.reset();
-      spyOn((component as any).dialog, 'open').and.callFake(() => { return { componentInstance: SimpleModalComponent } });
+      spyOn((component as any).dialog, 'open').and.callFake(() => { return { componentInstance: {
+        apiSuccessEvent: new EventEmitter()
+      } } });
       component.openDialog(empInterfaceStub);
       expect(component.getEmpData).toHaveBeenCalled();
     });
@@ -62,8 +72,8 @@ describe('EmpDashboardComponent', () => {
   describe('editEmpForm', () => {
     it('makes expected calls', () => {
       const empInterfaceStub: EmpInterface = <any>{};
-      spyOn((component as any).dialog, 'open').and.callFake(() => { return { componentInstance: SimpleModalComponent }});
-      spyOn(component,'openDialog');
+      spyOn((component as any).dialog, 'open').and.callFake(() => { return { componentInstance: SimpleModalComponent } });
+      spyOn(component, 'openDialog');
       component.editEmpForm(empInterfaceStub);
       expect(component.openDialog).toHaveBeenCalled();
     });
@@ -80,7 +90,21 @@ describe('EmpDashboardComponent', () => {
       const apiServiceStub: ApiService = fixture.debugElement.injector.get(
         ApiService
       );
-      spyOn(apiServiceStub, 'getEmpData').and.callThrough();
+      const res = [
+        {
+          id: 1,
+          fname: 'ajit',
+          lname: 'sant',
+          email: 'ajit@test.com',
+          mobile: 9812087198,
+          salary: 90000,
+          action: {
+            edit: 'Edit',
+            delete: 'Delete'
+          }
+        }
+      ]
+      spyOn(apiServiceStub, 'getEmpData').and.returnValue(of(res));
       (<jasmine.Spy>component.getEmpData).and.callThrough();
       component.getEmpData();
       expect(apiServiceStub.getEmpData).toHaveBeenCalled();
@@ -89,7 +113,7 @@ describe('EmpDashboardComponent', () => {
 
   describe('addEmp', () => {
     it('makes expected calls', () => {
-      spyOn(component, 'openDialog').and.callThrough();
+      spyOn(component, 'openDialog');
       component.addEmp();
       expect(component.openDialog).toHaveBeenCalled();
     });

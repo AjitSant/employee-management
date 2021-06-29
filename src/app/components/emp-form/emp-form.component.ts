@@ -37,7 +37,7 @@ export class EmpFormComponent implements OnInit, OnDestroy {
     if (!this.data) {
       this.dashCall = true;
     }
-    this.editData = history.state.empData || (this.data && this.data.empData);
+    this.editData = (history.state && history.state.empData) || (this.data && this.data.empData);
     if (this.editData) {
       this.makeEditEntry(this.editData);
     }

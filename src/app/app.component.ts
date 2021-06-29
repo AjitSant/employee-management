@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, NavigationStart, Router } from '@angular/router';;
+import { NavigationStart, Router } from '@angular/router';;
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,7 @@ export class AppComponent {
   constructor(private router: Router) {
     router.events.forEach((event) => {
       if (event instanceof NavigationStart) {
-        if (event['url'] == '/login') {
+        if (event['url'] == '/login' || event['url'] == '/') {
           this.showHead = false;
         } else {
           this.showHead = true;
