@@ -12,9 +12,9 @@ describe('EmpFormComponent', () => {
 
   beforeEach(() => {
     const formBuilderStub = () => ({ group: () => ({}) });
-    const historyStub =  () =>({
-      state:{
-        empData:{}
+    const historyStub = () => ({
+      state: {
+        empData: {}
       }
     })
     const apiServiceStub = () => ({
@@ -46,7 +46,7 @@ describe('EmpFormComponent', () => {
       providers: [
         { provide: FormBuilder, useFactory: formBuilderStub },
         { provide: ApiService, useFactory: apiServiceStub },
-        {provide: History, useFactory: historyStub}
+        { provide: History, useFactory: historyStub }
       ]
     });
     fixture = TestBed.createComponent(EmpFormComponent);
@@ -81,11 +81,28 @@ describe('EmpFormComponent', () => {
           lname: 'sant',
           email: 'ajit@test.com',
           mobile: 9812087198,
-          salary: 90000}
+          salary: 90000
+        }
       };
       spyOn(component, 'makeEditEntry');
       component.ngOnInit();
       expect(component.makeEditEntry).toHaveBeenCalled();
+    });
+  });
+
+  describe('handleErr', () => {
+    it('makes expected calls', () => {
+      spyOn(component.apiSuccess, 'emit');
+      component.handleErr('added');
+      expect(component.submitClass).toEqual('alert-warning');
+    });
+  });
+
+  describe('handleSuccess', () => {
+    it('makes expected calls', () => {
+      spyOn(component.apiSuccess, 'emit');
+      component.handleSuccess('added');
+      expect(component.submitClass).toEqual('alert-success');
     });
   });
 
@@ -101,20 +118,23 @@ describe('EmpFormComponent', () => {
       const apiServiceStub: ApiService = fixture.debugElement.injector.get(
         ApiService
       );
-      component.submitName === "Add"
+      spyOn((component as any).router,'navigate');
+      (component as any).editData = {id:1};
+      component.submitName ="Add"
       spyOn(component, 'handleSuccess');
       spyOn(component, 'handleErr');
-      // spyOn(apiServiceStub, 'postDashData').and.returnValue();
-      // spyOn(apiServiceStub, 'updateDashData').and.callThrough();
+      spyOn(apiServiceStub, 'postDashData').and.returnValue(of({}));
+      spyOn(apiServiceStub, 'updateDashData').and.returnValue(of({}));
       spyOn(apiServiceStub, 'postData').and.returnValue(of({}));
-      // spyOn(apiServiceStub, 'updateData').and.callThrough();
+      spyOn(apiServiceStub, 'updateData').and.returnValue(of({}));
+      component.onSubmit();
+      component.dashCall = true;
       component.onSubmit();
       expect(component.handleSuccess).toHaveBeenCalled();
-      //expect(component.handleErr).toHaveBeenCalled();
-      // expect(apiServiceStub.postDashData).toHaveBeenCalled();
-      // expect(apiServiceStub.updateDashData).toHaveBeenCalled();
-      // expect(apiServiceStub.postData).toHaveBeenCalled();
-      // expect(apiServiceStub.updateData).toHaveBeenCalled();
+      component.submitName = "Update";
+      component.onSubmit();
+      component.dashCall = false;
+      component.onSubmit();
     });
   });
 });

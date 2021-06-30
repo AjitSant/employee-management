@@ -1,6 +1,7 @@
+@import "./../../../styles/variable";
 .contact-section {
   color: green;
-  margin-top: 53px;
+  margin-top: $font-53;
   span{
       color: indigo;
   }

@@ -1,31 +1,41 @@
+@import "./../../../styles/variable";
 .main-dashboard {
-  margin-top: 53px;
+  margin-top: $font-53;
   h4 {
-    font-size: 17px;
+    font-size: $font-17;
+    font-weight: bolder;
   }
   .has-search {
     input {
       border: none;
-      padding: 6px 0;
+      padding: $font-6 0;
       &:focus {
         outline: none;
       }
+      &::placeholder {
+        font-size: $font-13;
+        font-weight: bold;
+      }
     }
   }
+  .record-section{
+    height: 55vh;
+    overflow-y: auto;
+  }
   .add-record {
-    margin-top: 35px;
+    margin-top: $font-35;
     button {
       border: none;
+      font-weight: bold;
       background-image: linear-gradient(
         to top,
-        rgba(0, 0, 255, 0.5),
-        rgba(0, 0, 255, 0.8)
+        rgb(2, 71, 254, 0.6),
+        rgb(2, 71, 254, 0.9)
       );
-      color: #fff;
-      font-weight: 500;
-      font-size: 13px;
+      color: $white;
+      font-size: $font-13;
       .mat-badge-content {
-        color: #fff;
+        color: $white;
         background: black;
       }
     }

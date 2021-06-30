@@ -23,7 +23,8 @@ import { CardComponent } from './components/card/card.component';
 import { SimpleModalComponent } from './components/modal/simple-modal/simple-modal.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { FilterPipe } from './pipes/filter.pipe'
+import { FilterPipe } from './pipes/filter.pipe';
+import { ConfirmDeleteComponent } from './components/confirm-delete/confirm-delete.component'
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { FilterPipe } from './pipes/filter.pipe'
     SimpleModalComponent,
     AboutComponent,
     ContactComponent,
-    FilterPipe
+    FilterPipe,
+    ConfirmDeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,7 @@ import { FilterPipe } from './pipes/filter.pipe'
     MatDialogModule
   ],
   providers: [],
-  entryComponents:[SimpleModalComponent,EmpFormComponent],
+  entryComponents: [SimpleModalComponent, EmpFormComponent, ConfirmDeleteComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

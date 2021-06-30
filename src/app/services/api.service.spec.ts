@@ -5,7 +5,7 @@ import {
 } from '@angular/common/http/testing';
 import { EmpInterface } from '../interfaces/app.model';
 import { ApiService } from './api.service';
-import { dashboardUrl, empUrl } from 'src/environments/environment';
+import { dashboardUrl, empUrl, loginUrl } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 
 describe('ApiService', () => {
@@ -72,4 +72,58 @@ describe('ApiService', () => {
       tick();
     })));
   });
+
+  //ajit
+
+  describe('updateData', () => {
+    it('makes expected calls', inject([ApiService], fakeAsync((service: ApiService) => {
+      const empInterfaceStub: EmpInterface = <any>{};
+      service.updateData(empInterfaceStub, 1).subscribe();
+      const req = httpTestingController.expectOne(empUrl + 1);
+      expect(req.request.method).toEqual('PUT');
+      tick();
+    })));
+  });
+
+  describe('updateDashData', () => {
+    it('makes expected calls', inject([ApiService], fakeAsync((service: ApiService) => {
+      const empInterfaceStub: EmpInterface = <any>{};
+      service.updateDashData(empInterfaceStub, 1).subscribe();
+      const req = httpTestingController.expectOne(dashboardUrl + 1);
+      expect(req.request.method).toEqual('PUT');
+      tick();
+    })));
+  });
+
+  describe('deleteData', () => {
+    it('makes expected calls', inject([ApiService], fakeAsync((service: ApiService) => {
+      service.deleteData(1).subscribe();
+      const req = httpTestingController.expectOne(empUrl + 1);
+      expect(req.request.method).toEqual('DELETE');
+      tick();
+    })));
+  });
+
+  describe('deleteDashData', () => {
+    it('makes expected calls', inject([ApiService], fakeAsync((service: ApiService) => {
+      service.deleteDashData(1).subscribe();
+      const req = httpTestingController.expectOne(dashboardUrl + 1);
+      expect(req.request.method).toEqual('DELETE');
+      tick();
+    })));
+  });
+
+  describe('login', () => {
+    it('makes expected calls', inject([ApiService], fakeAsync((service: ApiService) => {
+      const data = {
+        email: 'test@test.com',
+        password: 'abcd'
+      }
+      service.login(data).subscribe();
+      const req = httpTestingController.expectOne(loginUrl);
+      expect(req.request.method).toEqual('POST');
+      tick();
+    })));
+  });
+
 });

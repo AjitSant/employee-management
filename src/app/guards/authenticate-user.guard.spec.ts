@@ -32,7 +32,17 @@ describe('AuthenticateUserGuard', () => {
       const routerStateSnapshotStub: RouterStateSnapshot = <any>{};
       const authServiceStub: AuthService = TestBed.inject(AuthService);
       spyOn(routerStub, 'navigate').and.callThrough();
-      spyOn(authServiceStub, 'isLoggedIn').and.callThrough();
+      spyOn(authServiceStub, 'isLoggedIn').and.returnValue(true);
+      service.canActivate(activatedRouteSnapshotStub, routerStateSnapshotStub);
+      expect(authServiceStub.isLoggedIn).toHaveBeenCalled();
+    });
+    it('makes expected calls for logged out', () => {
+      const activatedRouteSnapshotStub: ActivatedRouteSnapshot = <any>{};
+      const routerStub: Router = TestBed.inject(Router);
+      const routerStateSnapshotStub: RouterStateSnapshot = <any>{};
+      const authServiceStub: AuthService = TestBed.inject(AuthService);
+      spyOn(routerStub, 'navigate').and.callThrough();
+      spyOn(authServiceStub, 'isLoggedIn').and.returnValue(false);
       service.canActivate(activatedRouteSnapshotStub, routerStateSnapshotStub);
       expect(authServiceStub.isLoggedIn).toHaveBeenCalled();
     });

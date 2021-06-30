@@ -1,20 +1,53 @@
+@import "./../../../styles/variable";
 .emp-dashboard {
-   margin-top: 53px;
-  table {
-    width: 100%;
+  margin-top: $font-53;
+  font-weight: bolder;
+  .mat-elevation-z8 {
+    height: 55vh;
+    overflow-y: auto;
+    table {
+      width: 100%;
+      td,
+      th {
+        font-weight: bolder;
+        padding: {
+          top: $font-8;
+          bottom: $font-8;
+        }
+      }
+      td {
+        color: #8f8f8f;
+        button {
+          color: $white;
+          &.edit {
+            background: #00b7eb;
+          }
+          &.del {
+            background: #fe2712;
+          }
+        }
+      }
+      th {
+        color: #1f1f1f;
+        font-size: $font-14;
+      }
+    }
   }
 
   .mat-form-field {
-    font-size: 14px;
+    font-size: $font-14;
     width: 100%;
   }
-
-  td,
-  th {
-    width: 14.28%;
-    padding: {
-      top: 8px;
-      bottom: 8px;
+  button {
+    font-weight: bold;
+    &.add-emp {
+      border: none;
+      color: $white;
+      background-image: linear-gradient(
+        to top,
+        rgb(2, 71, 254, 0.6),
+        rgb(2, 71, 254, 0.9)
+      );
     }
   }
 }

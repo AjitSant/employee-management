@@ -1,18 +1,26 @@
+@import "./../../../styles/variable";
 .custom-card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding: 1rem;
-    background-image: linear-gradient(to top left, rgba(0,0,255,0.6), rgba(0,0,255,0.8));
-    color: #fff;
-    border: none;
-    h4{
-        font-size: 17px;
-    }
-    p{
-        font-size: 13px;
-    }
-    button{
-        background: black;
-        font-size: 13px;
-        border: none;
-    }
+  font-weight: bold;
+  box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  background-image: linear-gradient(
+    to top,
+    rgb(2, 71, 254, 0.6),
+    rgb(2, 71, 254, 0.9)
+  );
+  color: $white;
+  border: none;
+  h4 {
+    font-size: 1.06rem;
+    font-weight: bold;
   }
+  p {
+    font-size: 0.81rem;
+  }
+  button {
+    font-weight: bold;
+    background: black;
+    font-size: 0.81rem;
+    border: none;
+  }
+}

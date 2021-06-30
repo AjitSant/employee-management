@@ -1,89 +1,98 @@
+@import "./../../../styles/variable";
 .login-section {
   &.container-fluid {
-    height: 100%;
-    background-image: linear-gradient(to top right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9));
+    height: 100vh;
+    background-image: linear-gradient(
+      to top right,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.9)
+    );
     font-family: "Roboto", sans-serif;
   }
   .login-section-inner {
     height: 100%;
     .login-box {
-      background: #fff;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      background: $white;
+      box-shadow: 0 $font-3 $font-6 rgba(0, 0, 0, 0.16), 0 $font-3 $font-6 rgba(0, 0, 0, 0.23);
       .login-title {
-        background: #1a2226;
+        background: rgba(0, 0, 0, 0.82);
         text-align: center;
-        font-size: 21px;
-        font-weight: bold;
+        font-size: $font-21;
+        font-weight: 900;
         color: #ecf0f5;
-        padding: 10px 0;
+        padding: $font-10 0;
       }
     }
     .login-form {
       text-align: left;
+      .alert {
+          &.alert-danger {
+            top: 0 - $font-16;
+          }
+        }
       .loginbttm {
-          margin-top: 32px;
+        margin-top: $font-32;
         .login-button {
           text-align: center;
-          margin-bottom: 40px;
-         button[type="submit"]{
-             padding: 4px 30px;
-         }
+          margin-bottom: $font-40;
+          button[type="submit"] {
+            padding: $font-6 $font-30;
+            font: {
+              weight: bold;
+              size: $font-14;
+            }
+          }
         }
       }
       .form-group {
-        outline: 0px;
+        outline: 0;
         input[type="email"] {
-          background-color: #fff;
+          background-color: $white;
           border: none;
-          border-bottom: 1px solid #1a2226;
-          border-top: 0px;
-          border-radius: 0px;
+          border-bottom: $font-1 solid #1a2226;
+          border-top: 0;
+          border-radius: 0;
           font-weight: bold;
           outline: 0;
-          margin-bottom: 20px;
-          padding: 0 0 4px 0;
+          margin-bottom: $font-20;
+          padding: 0 0 $font-4 0;
           color: #1a2226;
-          font-size: 15px;
+          font-size: $font-15;
           font-weight: 500;
         }
 
         input[type="password"] {
-          background-color: #fff;
+          background-color: $white;
           border: none;
-          border-bottom: 1px solid #1a2226;
-          border-top: 0px;
-          border-radius: 0px;
+          border-bottom: $font-1 solid #1a2226;
+          border-top: 0;
+          border-radius: 0;
           font-weight: bold;
           outline: 0;
-          padding: 0 0 4px 0;
-          margin-bottom: 20px;
+          padding: 0 0 $font-4 0;
+          margin-bottom: $font-20;
           color: #1a2226;
-          font-size: 15px;
+          font-size: $font-15;
           font-weight: 500;
         }
         input {
-          &:focus{
-          outline: none;
-          box-shadow: 0 0 0;
+          &:focus {
+            outline: none;
+            box-shadow: 0 0 0;
           }
-          &.ng-invalid.ng-touched{
-            border-color:red;
-            border-width: 2px;
+          &.ng-invalid.ng-touched {
+            border-color: red;
+            border-width: $font-2;
           }
         }
 
         .form-control-label {
-          font-size: 13px;
+          font-size: $font-13;
           color: #6c6c6c;
           font-weight: bold;
           margin-bottom: 0;
-          &.invalid{
+          &.invalid {
             color: red;
-          }
-        }
-        .alert{
-          &.alert-danger{
-            top: -16px;
           }
         }
       }

@@ -1,29 +1,41 @@
+@import "./../../../styles/variable";
 .emp-form {
   &.not-dialog {
-    margin-top: 68px;
+    margin-top: $font-68;
   }
-  button.button-close {
-    position: inherit;
-    top: 0;
-    right: 0;
-    border: none;
-    background: none;
-    font-size: 26px;
-    color: darkgrey;
-    &:focus {
-      outline: none;
-      cursor: pointer;
+  .emp-heading {
+    font: {
+      weight: bolder;
+      size: 1.5rem;
+    }
+  }
+  button {
+    font-weight: bold;
+    &.button-close {
+      position: inherit;
+      top: 0;
+      right: 0;
+      border: none;
+      background: none;
+      font-size: $font-26;
+      color: darkgrey;
+      &:focus {
+        outline: none;
+        cursor: pointer;
+      }
     }
   }
   label {
+    font-weight: bolder;
     &.invalid {
       color: red;
     }
   }
   input {
+    font-weight: bolder;
     &.ng-invalid.ng-touched {
       border-color: red;
-      border-width: 2px;
+      border-width: $font-2;
     }
   }
 }

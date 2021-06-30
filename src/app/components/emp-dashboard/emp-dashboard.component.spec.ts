@@ -6,7 +6,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { RouterTestingModule } from '@angular/router/testing';
 import { EmpDashboardComponent } from './emp-dashboard.component';
 import { SimpleModalComponent } from '../modal/simple-modal/simple-modal.component';
-import { of } from 'rxjs';
+import { of, throwError } from 'rxjs';
 
 describe('EmpDashboardComponent', () => {
   let component: EmpDashboardComponent;
@@ -61,11 +61,34 @@ describe('EmpDashboardComponent', () => {
   describe('openDialog', () => {
     it('makes expected calls', () => {
       const empInterfaceStub: EmpInterface = <any>{};
-      spyOn((component as any).dialog, 'open').and.callFake(() => { return { componentInstance: {
-        apiSuccessEvent: new EventEmitter()
-      } } });
+      const res = {
+        componentInstance: {
+          apiSuccessEvent: new EventEmitter()
+        }
+      };
+      spyOn((component as any).dialog, 'open').and.callFake(() => {
+        return res;
+      });
       component.openDialog(empInterfaceStub);
+      res.componentInstance.apiSuccessEvent.emit(true);
       expect(component.getEmpData).toHaveBeenCalled();
+    });
+  });
+
+  describe('confirmDelete', () => {
+    it('makes expected calls', () => {
+      spyOn(component,'deleteEmpForm');
+      const res = {
+        componentInstance: {
+          apiSuccessEvent: new EventEmitter()
+        }
+      };
+      spyOn((component as any).dialog, 'open').and.callFake(() => {
+        return res;
+      });
+      component.confirmDelete(1);
+      res.componentInstance.apiSuccessEvent.emit(true);
+      expect(component.deleteEmpForm).toHaveBeenCalled();
     });
   });
 
@@ -103,7 +126,7 @@ describe('EmpDashboardComponent', () => {
             delete: 'Delete'
           }
         }
-      ]
+      ];
       spyOn(apiServiceStub, 'getEmpData').and.returnValue(of(res));
       (<jasmine.Spy>component.getEmpData).and.callThrough();
       component.getEmpData();
@@ -116,6 +139,25 @@ describe('EmpDashboardComponent', () => {
       spyOn(component, 'openDialog');
       component.addEmp();
       expect(component.openDialog).toHaveBeenCalled();
+    });
+  });
+
+  describe('deleteEmpForm', () => {
+    it('makes expected calls', () => {
+      const apiServiceStub: ApiService = fixture.debugElement.injector.get(
+        ApiService
+      );
+      spyOn(apiServiceStub, 'deleteData').and.returnValue(of({}));
+      component.deleteEmpForm(1);
+      expect(component.delClass).toEqual('alert-success');
+    });
+    it('makes expected calls in error', () => {
+      const apiServiceStub: ApiService = fixture.debugElement.injector.get(
+        ApiService
+      );
+      spyOn(apiServiceStub, 'deleteData').and.returnValue(throwError('err'));
+      component.deleteEmpForm(1);
+      expect(component.delClass).toEqual('alert-warning');
     });
   });
 });

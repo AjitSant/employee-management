@@ -1,9 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { EmpInterface } from 'src/app/interfaces/app.model';
 import { ApiService } from 'src/app/services/api.service';
+import { ConfirmDeleteComponent } from '../confirm-delete/confirm-delete.component';
+import { SimpleModalComponent } from '../modal/simple-modal/simple-modal.component';
 
 @Component({
   selector: 'app-main-dashboard',
@@ -16,7 +19,7 @@ export class MainDashboardComponent implements OnInit, OnDestroy {
   delMsg = '';
   delClass = '';
   searchTxt: any;
-  constructor(private apiSrv: ApiService, private router: Router) {}
+  constructor(private apiSrv: ApiService, private router: Router, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.getDashboardData();
@@ -43,8 +46,17 @@ export class MainDashboardComponent implements OnInit, OnDestroy {
     this.router.navigate(['/empForm'], { state: { empData } });
   }
 
+  confirmDelete(empId: number){
+    let dialogRef = this.dialog.open(SimpleModalComponent);
+    dialogRef.componentInstance.component = ConfirmDeleteComponent;
+    dialogRef.componentInstance.apiSuccessEvent.pipe(takeUntil(this.sub)).subscribe((res) => {
+      if (res) {
+        this.deleteDashboardData(empId);
+      }
+    })
+  }
+
   deleteDashboardData(empId: number) {
-    console.log(empId);
     this.apiSrv
       .deleteDashData(empId)
       .pipe(takeUntil(this.sub))

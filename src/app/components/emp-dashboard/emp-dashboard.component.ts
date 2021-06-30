@@ -9,6 +9,7 @@ import { takeUntil } from 'rxjs/operators';
 import { MatDialog } from '@angular/material/dialog';
 import { EmpFormComponent } from '../emp-form/emp-form.component';
 import { SimpleModalComponent } from '../modal/simple-modal/simple-modal.component';
+import { ConfirmDeleteComponent } from '../confirm-delete/confirm-delete.component';
 
 @Component({
   selector: 'api-emp-dashboard',
@@ -62,7 +63,7 @@ export class EmpDashboardComponent implements OnDestroy {
   }
 
   openDialog(empData?: EmpInterface) {
-    let dialogRef = empData ? this.dialog.open(SimpleModalComponent, { data: { empData }, height: '80%', width: '40%' }) : this.dialog.open(SimpleModalComponent, { data: {}, height: '80%', width: '40%' });
+    let dialogRef = empData ? this.dialog.open(SimpleModalComponent, { data: { empData }, height: '80vh', width: '40%' }) : this.dialog.open(SimpleModalComponent, { data: {}, height: '80vh', width: '40%' });
     dialogRef.componentInstance.component = EmpFormComponent;
     dialogRef.componentInstance.apiSuccessEvent.pipe(takeUntil(this.sub)).subscribe((res) => {
       if (res) {
@@ -85,5 +86,15 @@ export class EmpDashboardComponent implements OnDestroy {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  confirmDelete(empId: number) {
+    let dialogRef = this.dialog.open(SimpleModalComponent);
+    dialogRef.componentInstance.component = ConfirmDeleteComponent;
+    dialogRef.componentInstance.apiSuccessEvent.pipe(takeUntil(this.sub)).subscribe((res) => {
+      if (res) {
+        this.deleteEmpForm(empId);
+      }
+    })
   }
 }

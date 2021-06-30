@@ -8,6 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "json-server": "json-server --watch json/db.json --port 3004",
     "json-server-auth": "json-server-auth db.json",
+    "code-coverage": "ng test --no-watch --code-coverage",
     "test": "ng test"
   },
   "private": true,

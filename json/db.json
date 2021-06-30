@@ -1,26 +1,10 @@
 {
   "employee": [
     {
-      "fname": "SriDevi",
-      "lname": "Kale",
-      "email": "sri.test@gmail.com",
-      "mobile": "8765980890",
-      "salary": "100000",
-      "id": 5
-    },
-    {
-      "fname": "ajay",
-      "lname": "devgan",
-      "email": "dev.test@gmail.com",
-      "mobile": "8765980845",
-      "salary": "100000",
-      "id": 6
-    },
-    {
       "fname": "Anchal",
       "lname": "garg",
       "email": "anchal.garg@test.com",
-      "mobile": "8900034178",
+      "mobile": "8900034198",
       "salary": "891209",
       "id": 9
     },
@@ -33,28 +17,12 @@
       "id": 10
     },
     {
-      "fname": "test1",
-      "lname": "last",
-      "email": "test1@test.com",
-      "mobile": "9812345671",
-      "salary": "90999",
-      "id": 11
-    },
-    {
       "fname": "Abhay",
       "lname": "sant",
       "email": "abhay@test.com",
       "mobile": "9056417865",
       "salary": "89000",
       "id": 12
-    },
-    {
-      "fname": "Aryan",
-      "lname": "Dutt",
-      "email": "ajitkumarsant.test@gmail.com",
-      "mobile": "9812549871",
-      "salary": "50000",
-      "id": 13
     },
     {
       "fname": "Aman",
@@ -71,57 +39,57 @@
       "mobile": "9812091256",
       "salary": "90000",
       "id": 15
-    }
-  ],
-  "dashboard": [
-    {
-      "fname": "pallavi",
-      "lname": "singh",
-      "email": "pallavi@twist.com",
-      "mobile": "5765980845",
-      "salary": "780000",
-      "id": 8
     },
     {
-      "fname": "Sri",
-      "lname": "pallavi",
-      "email": "sri.pallavi@test.com",
-      "mobile": "9812345670",
-      "salary": "89710",
-      "id": 11
-    },
-    {
-      "fname": "kiran",
-      "lname": "shah",
-      "email": "kiran.shah@test.com",
-      "mobile": "8971245190",
-      "salary": "98000",
-      "id": 13
-    },
-    {
-      "fname": "Rani",
-      "lname": "Sharma",
-      "email": "rani.sharmaji@test.com",
-      "mobile": "9087125620",
-      "salary": "80000",
-      "id": 14
-    },
-    {
-      "fname": "Ajit",
-      "lname": "Sant",
-      "email": "test@spam.com",
-      "mobile": "8976124563",
+      "fname": "Naina",
+      "lname": "Wadhwa",
+      "email": "naina@test.com",
+      "mobile": "9812091780",
       "salary": "60000",
       "id": 16
     },
     {
-      "fname": "keya",
-      "lname": "dutta",
-      "email": "keya@gmail.com",
-      "mobile": "8971290862",
-      "salary": "80000",
+      "fname": "Abhishek",
+      "lname": "Kumar",
+      "email": "abhi@test.com",
+      "mobile": "9087190981",
+      "salary": "90000",
       "id": 17
     },
+    {
+      "fname": "Ram",
+      "lname": "Chandra",
+      "email": "ram.chandra@gmail.com",
+      "mobile": "9081786519",
+      "salary": "80000",
+      "id": 18
+    },
+    {
+      "fname": "Abhimanyu",
+      "lname": "prasad",
+      "email": "abhi.pra@test.com",
+      "mobile": "9081786510",
+      "salary": "90000",
+      "id": 19
+    },
+    {
+      "fname": "ajay",
+      "lname": "Singh",
+      "email": "ajay.singh@test.com",
+      "mobile": "9810876518",
+      "salary": "90000",
+      "id": 20
+    },
+    {
+      "fname": "Milan",
+      "lname": "Prasad",
+      "email": "milan.p@test.com",
+      "mobile": "9081289719",
+      "salary": "80000",
+      "id": 21
+    }
+  ],
+  "dashboard": [
     {
       "fname": "Ajinka",
       "lname": "Parbhane",
@@ -140,7 +108,7 @@
     },
     {
       "fname": "Riya",
-      "lname": "Sharma",
+      "lname": "Chandra",
       "email": "riya.sharma@test.com",
       "mobile": "9812345610",
       "salary": "80000",
@@ -169,6 +137,22 @@
       "mobile": "9812098245",
       "salary": "90800",
       "id": 23
+    },
+    {
+      "fname": "kavi",
+      "lname": "karan",
+      "email": "kavi@test.com",
+      "mobile": "8976124516",
+      "salary": "98120",
+      "id": 24
+    },
+    {
+      "fname": "Ajit",
+      "lname": "Chandra",
+      "email": "chandra.ajit@test.com",
+      "mobile": "9570510842",
+      "salary": "80000",
+      "id": 25
     }
   ]
 }

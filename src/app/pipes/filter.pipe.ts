@@ -13,7 +13,7 @@ export class FilterPipe implements PipeTransform {
     key4: string
   ) {
     // return empty array if array is falsy
-    if (!items) {
+    if (!items || (items && items.length === 0)) {
       return [];
     }
 

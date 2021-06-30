@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EmpInterface } from '../interfaces/app.model';
-import { dashboardUrl, empUrl, loginUrl, verifyTokenUrl } from 'src/environments/environment';
+import { dashboardUrl, empUrl, loginUrl } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -44,10 +44,5 @@ export class ApiService {
 
   login(data: any) {
     return this.http.post(loginUrl, data);
-  }
-
-  verifyToken(token: any) {
-    this.headers.append("Authorization",`Bearer ${token}`);
-    return this.http.get(verifyTokenUrl, { ...this.headers });
   }
 }

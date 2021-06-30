@@ -27,6 +27,9 @@
                     </div>
 
                     <div class="loginbttm">
+                        <div class="alert alert-danger py-2" *ngIf="errMsg">
+                         <strong>{{errMsg}}</strong>
+                        </div>
                         <div class="d-flex align-items-center justify-content-center login-button">
                             <button type="submit" class="btn btn-success">Login</button>
                         </div>

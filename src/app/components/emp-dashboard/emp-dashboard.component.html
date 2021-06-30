@@ -1,6 +1,6 @@
-<div class="container-fluid emp-dashboard px-3 pt-4">
+<div class="container emp-dashboard px-3 pt-4">
     <div class="d-flex align-items-center justify-content-start mb-3">
-        <button type="button" class="btn btn-primary mr-4 py-2" (click)='addEmp()'>Add Employee</button>
+        <button type="button" class="btn add-emp mr-4 py-2" (click)='addEmp()'>Add Employee</button>
         <div class="alert mb-0 py-2" [ngClass]="delClass" *ngIf="delMsg">
             <strong>
                 {{delMsg}}
@@ -16,7 +16,7 @@
         <table mat-table [dataSource]="dataSource" matSort>
 
             <ng-container matColumnDef="id">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Employee Id </th>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Employee ID </th>
                 <td mat-cell *matCellDef="let row"> {{row.id}} </td>
             </ng-container>
 
@@ -48,10 +48,10 @@
             <ng-container matColumnDef="action">
                 <th mat-header-cell *matHeaderCellDef> Action </th>
                 <td mat-cell *matCellDef="let row">
-                    <button type="button" class="btn btn-primary mr-3"
+                    <button type="button" class="btn edit mr-3"
                         (click)="editEmpForm(row)">{{row.action.edit}}</button>
-                    <button type="button" class="btn btn-danger"
-                        (click)="deleteEmpForm(row.id)">{{row.action.delete}}</button>
+                    <button type="button" class="btn del"
+                        (click)="confirmDelete(row.id)">{{row.action.delete}}</button>
                 </td>
             </ng-container>
 

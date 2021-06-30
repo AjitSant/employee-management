@@ -1,23 +1,28 @@
+@import "./../../../styles/variable";
 .header {
+  font-weight: bolder;
   position: fixed;
   z-index: 3;
   top: 0;
-  padding: 10px 0;
-  background: blue;
+  padding: $font-10 0;
+  background-image: linear-gradient(
+    to top,
+    rgb(2, 71, 254, 0.6),
+    rgb(2, 71, 254, 0.9)
+  );
   a {
-    color: #fff;
+    color: $white;
     text-decoration: none;
-    font-size: 13px;
-    font-weight: 600;
+    font-size: $font-13;
+    font-weight: bolder;
   }
   .logo {
-    font-size: 20px;
-    font-weight: 400;
+    font-size: $font-20;
     img {
-      width: 30px;
-      top: -4px;
+      width: $font-30;
+      top: $font-minus-4;
       position: relative;
-      margin-right: 8px;
+      margin-right: $font-8;
     }
   }
 }

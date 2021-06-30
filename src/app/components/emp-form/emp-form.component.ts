@@ -24,7 +24,7 @@ export class EmpFormComponent implements OnInit, OnDestroy {
   @Output() apiSuccess = new EventEmitter<any>();
   dashCall = false;
 
-  constructor(private fb: FormBuilder, private apiSrv: ApiService, private router:Router) {
+  constructor(private fb: FormBuilder, private apiSrv: ApiService, private router: Router) {
     this.empForm = this.fb.group({
       fname: ['', Validators.required],
       lname: ['', Validators.required],
@@ -78,17 +78,17 @@ export class EmpFormComponent implements OnInit, OnDestroy {
               this.router.navigate(["/mainDashboard"]);
             },
             error: error => {
-              this.handleErr('Added');
+              this.handleErr('Addition');
             }
           })
         } else if (this.submitName === "Update") {
           this.apiSrv.updateDashData(this.empForm.value, this.editData.id).pipe(takeUntil(this.sub)).subscribe({
             next: res => {
-              this.handleSuccess('Added');
+              this.handleSuccess('Updated');
               this.router.navigate(["/mainDashboard"]);
             },
             error: error => {
-              this.handleErr('Added');
+              this.handleErr('Updation');
             }
           })
         }
@@ -100,16 +100,16 @@ export class EmpFormComponent implements OnInit, OnDestroy {
               this.handleSuccess('Added');
             },
             error: error => {
-              this.handleErr('Added');
+              this.handleErr('Addition');
             }
           })
         } else if (this.submitName === "Update") {
           this.apiSrv.updateData(this.empForm.value, this.editData.id).pipe(takeUntil(this.sub)).subscribe({
             next: res => {
-              this.handleSuccess('Added');
+              this.handleSuccess('Updated');
             },
             error: error => {
-              this.handleErr('Added');
+              this.handleErr('Updation');
             }
           })
         }
