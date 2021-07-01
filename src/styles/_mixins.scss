@@ -1,0 +1,7 @@
+@mixin setGradient($position,$color1,$color2) {
+     background-image: linear-gradient(
+        $position,
+        $color1,
+        $color2
+      );
+}

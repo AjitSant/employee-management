@@ -1,14 +1,13 @@
 @import "./../../../styles/variable";
+@import "./../../../styles/mixins";
 .header {
   position: fixed;
   z-index: 3;
   top: 0;
   padding: $font-10 0;
-  background-image: linear-gradient(
-    to top,
+  @include setGradient(to top,
     rgb(2, 71, 254, 0.6),
-    rgb(2, 71, 254, 0.9)
-  );
+    rgb(2, 71, 254, 0.9));
   a {
     font-family: "Carnas-light";
     color: $white;

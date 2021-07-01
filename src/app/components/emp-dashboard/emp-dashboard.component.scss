@@ -1,4 +1,5 @@
 @import "./../../../styles/variable";
+@import "./../../../styles/mixins";
 .emp-dashboard {
   margin-top: $font-53;
   font-family: "Carnas-bold";
@@ -44,11 +45,7 @@
     &.add-emp {
       border: none;
       color: $white;
-      background-image: linear-gradient(
-        to top,
-        rgb(2, 71, 254, 0.6),
-        rgb(2, 71, 254, 0.9)
-      );
+      @include setGradient(to top,rgb(2, 71, 254, 0.6),rgb(2, 71, 254, 0.9));
     }
   }
 }

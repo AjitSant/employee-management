@@ -1,12 +1,9 @@
 @import "./../../../styles/variable";
+@import "./../../../styles/mixins";
 .login-section {
   &.container-fluid {
     height: 100vh;
-    background-image: linear-gradient(
-      to top right,
-      rgba(0, 0, 0, 0.8),
-      rgba(0, 0, 0, 0.9)
-    );
+    @include setGradient(to top right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9));
     font-family: "Carnas-bold";
     .login-section-inner {
       height: 100%;

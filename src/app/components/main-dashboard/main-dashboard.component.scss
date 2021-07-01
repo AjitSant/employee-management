@@ -1,4 +1,5 @@
 @import "./../../../styles/variable";
+@import "./../../../styles/mixins";
 .main-dashboard {
   margin-top: $font-53;
   h4 {
@@ -25,11 +26,7 @@
     button {
       border: none;
       font-weight: bold;
-      background-image: linear-gradient(
-        to top,
-        rgb(2, 71, 254, 0.6),
-        rgb(2, 71, 254, 0.9)
-      );
+      @include setGradient(to top, rgb(2, 71, 254, 0.6), rgb(2, 71, 254, 0.9));
       color: $white;
       font-size: $font-13;
       .mat-badge-content {

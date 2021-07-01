@@ -1,15 +1,14 @@
 @import "./../../../styles/variable";
+@import "./../../../styles/mixins";
 .footer {
   position: fixed;
   z-index: 3;
   bottom: 0;
   padding: $font-16 0;
   color: $white;
- background-image: linear-gradient(
-        to top,
+  @include setGradient(to top,
         rgb(2,71,254, 0.6),
-        rgb(2,71,254,0.9)
-      );
+        rgb(2,71,254,0.9));
   p {
     font-size: $font-12;
     font-family: "Carnas-thin";
