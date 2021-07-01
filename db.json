@@ -19,6 +19,11 @@
       "email": "keerthib@gmail.com",
       "password": "$2a$10$vGTPKvH9cniqEf1kbK28TOCaBM5Q.LrW2MH2qP/HQZ2tjwybtRk3S",
       "id": 4
+    },
+    {
+      "email": "ajit.sant@gmail.com",
+      "password": "$2a$10$d89/lIOERcXMUHOkdJagXeeqeQKIXzRTtBXbnRMNFiShO1OuAuzXe",
+      "id": 5
     }
   ]
 }
