@@ -4,20 +4,26 @@
     src: url('../assets/fonts/Carnas/Carnas-Regular.ttf');
   }
   @font-face {
-    font-family: 'Carnas';
+    font-family: 'Carnas-bold';
     font-style: Bold;
     src: url('../assets/fonts/Carnas/carnas-bold_0-webfont.ttf');
   }
   
   @font-face {
-    font-family: 'Carnas';
+    font-family: 'Carnas-light';
     font-style: light;
     src: url('../assets/fonts/Carnas/Carnas-Light.ttf');
   }
   
   @font-face {
-    font-family: 'Carnas';
+    font-family: 'Carnas-thin';
     font-style: thin;
     src: url('../assets/fonts/Carnas/Carnas-Thin.ttf');
+  }
+
+  @font-face {
+    font-family: 'Carnas-medium';
+    font-style: medium;
+    src: url('../assets/fonts/Carnas/Carnas-Medium.ttf');
   }
   

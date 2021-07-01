@@ -9,18 +9,16 @@
     input {
       border: none;
       padding: $font-6 0;
+      color: #5c5c5c;
       &:focus {
         outline: none;
       }
       &::placeholder {
         font-size: $font-13;
-        font-weight: bold;
+        font-family: "Carnas-thin";
+        font-weight: 600;
       }
     }
-  }
-  .record-section{
-    height: 55vh;
-    overflow-y: auto;
   }
   .add-record {
     margin-top: $font-35;

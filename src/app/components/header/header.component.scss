@@ -1,6 +1,5 @@
 @import "./../../../styles/variable";
 .header {
-  font-weight: bolder;
   position: fixed;
   z-index: 3;
   top: 0;
@@ -11,18 +10,20 @@
     rgb(2, 71, 254, 0.9)
   );
   a {
+    font-family: "Carnas-light";
     color: $white;
     text-decoration: none;
     font-size: $font-13;
-    font-weight: bolder;
-  }
-  .logo {
+    font-weight: 700;
+    &.logo {
     font-size: $font-20;
+    font-weight: 500;
     img {
       width: $font-30;
       top: $font-minus-4;
       position: relative;
       margin-right: $font-8;
     }
+  }
   }
 }

@@ -1,7 +1,7 @@
 @import "./../../../styles/variable";
 .emp-dashboard {
   margin-top: $font-53;
-  font-weight: bolder;
+  font-family: "Carnas-bold";
   .mat-elevation-z8 {
     height: 55vh;
     overflow-y: auto;
@@ -39,6 +39,7 @@
     width: 100%;
   }
   button {
+    font-family: "Carnas-thin";
     font-weight: bold;
     &.add-emp {
       border: none;

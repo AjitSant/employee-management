@@ -1,5 +1,7 @@
 @import "./../../../styles/variable";
 .emp-form {
+  font-family: "Carnas-thin";
+  color: #5c5c5c;
   &.not-dialog {
     margin-top: $font-68;
   }
@@ -10,7 +12,8 @@
     }
   }
   button {
-    font-weight: bold;
+    font-weight: 400;
+    color: $white;
     &.button-close {
       position: inherit;
       top: 0;
@@ -18,7 +21,6 @@
       border: none;
       background: none;
       font-size: $font-26;
-      color: darkgrey;
       &:focus {
         outline: none;
         cursor: pointer;
@@ -26,13 +28,13 @@
     }
   }
   label {
-    font-weight: bolder;
+    font-weight: 400;
     &.invalid {
       color: red;
     }
   }
   input {
-    font-weight: bolder;
+    font-weight: 400;
     &.ng-invalid.ng-touched {
       border-color: red;
       border-width: $font-2;

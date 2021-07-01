@@ -4,14 +4,12 @@
 @import "font";
 html,
 body {
-  overflow-y: hidden;
   font-size: 100%;
 }
 * {
   margin: 0;
   padding: 0;
   font-family: "Carnas", "arial", sans-serif;
-  font-style: Bold;
 }
 .txt-bold {
   font-weight: bold;

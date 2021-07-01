@@ -7,92 +7,93 @@
       rgba(0, 0, 0, 0.8),
       rgba(0, 0, 0, 0.9)
     );
-    font-family: "Roboto", sans-serif;
-  }
-  .login-section-inner {
-    height: 100%;
-    .login-box {
-      background: $white;
-      box-shadow: 0 $font-3 $font-6 rgba(0, 0, 0, 0.16), 0 $font-3 $font-6 rgba(0, 0, 0, 0.23);
-      .login-title {
-        background: rgba(0, 0, 0, 0.82);
-        text-align: center;
-        font-size: $font-21;
-        font-weight: 900;
-        color: #ecf0f5;
-        padding: $font-10 0;
+    font-family: "Carnas-bold";
+    .login-section-inner {
+      height: 100%;
+      .login-box {
+        background: $white;
+        box-shadow: 0 $font-3 $font-6 rgba(0, 0, 0, 0.16),
+          0 $font-3 $font-6 rgba(0, 0, 0, 0.23);
+        .login-title {
+          background: rgba(0, 0, 0, 0.82);
+          text-align: center;
+          font-size: $font-22;
+          color: #ecf0f5;
+          padding: $font-10 0;
+          font-weight: 600;
+        }
       }
-    }
-    .login-form {
-      text-align: left;
-      .alert {
+      .login-form {
+        text-align: left;
+        .alert {
           &.alert-danger {
             top: 0 - $font-16;
           }
         }
-      .loginbttm {
-        margin-top: $font-32;
-        .login-button {
-          text-align: center;
-          margin-bottom: $font-40;
-          button[type="submit"] {
-            padding: $font-6 $font-30;
-            font: {
-              weight: bold;
-              size: $font-14;
+        .loginbttm {
+          margin-top: $font-32;
+          .login-button {
+            text-align: center;
+            margin-bottom: $font-40;
+            button[type="submit"] {
+              padding: $font-6 $font-30;
+              font: {
+                size: $font-14;
+                weight: 600;
+              }
             }
           }
         }
-      }
-      .form-group {
-        outline: 0;
-        input[type="email"] {
-          background-color: $white;
-          border: none;
-          border-bottom: $font-1 solid #1a2226;
-          border-top: 0;
-          border-radius: 0;
-          font-weight: bold;
+        .form-group {
           outline: 0;
-          margin-bottom: $font-20;
-          padding: 0 0 $font-4 0;
-          color: #1a2226;
-          font-size: $font-15;
-          font-weight: 500;
-        }
-
-        input[type="password"] {
-          background-color: $white;
-          border: none;
-          border-bottom: $font-1 solid #1a2226;
-          border-top: 0;
-          border-radius: 0;
-          font-weight: bold;
-          outline: 0;
-          padding: 0 0 $font-4 0;
-          margin-bottom: $font-20;
-          color: #1a2226;
-          font-size: $font-15;
-          font-weight: 500;
-        }
-        input {
-          &:focus {
-            outline: none;
-            box-shadow: 0 0 0;
+          input[type="email"] {
+            background-color: $white;
+            border: none;
+            border-bottom: $font-1 solid #1a2226;
+            border-top: 0;
+            border-radius: 0;
+            font-family: "Carnas-bold";
+            outline: 0;
+            margin-bottom: $font-20;
+            padding: 0 0 $font-4 0;
+            font-size: $font-15;
+            &:-internal-autofill-selected {
+              color: #5c5c5c;
+            }
           }
-          &.ng-invalid.ng-touched {
-            border-color: red;
-            border-width: $font-2;
-          }
-        }
 
-        .form-control-label {
-          font-size: $font-13;
-          color: #6c6c6c;
-          font-weight: bold;
-          margin-bottom: 0;
-          &.invalid {
-            color: red;
+          input[type="password"] {
+            background-color: $white;
+            border: none;
+            border-bottom: $font-1 solid #1a2226;
+            border-top: 0;
+            border-radius: 0;
+            font-family: "Carnas-bold";
+            color: #5c5c5c;
+            outline: 0;
+            padding: 0 0 $font-4 0;
+            margin-bottom: $font-20;
+            font-size: $font-15;
+          }
+          input {
+            &:focus {
+              outline: none;
+              box-shadow: 0 0 0;
+            }
+            &.ng-invalid.ng-touched {
+              border-color: red;
+              border-width: $font-2;
+            }
+          }
+
+          .form-control-label {
+            font-size: $font-13;
+            color: #6c6c6c;
+            font-family: "Carnas";
+            margin-bottom: 0;
+            &.invalid {
+              color: red;
+            }
           }
         }
       }
